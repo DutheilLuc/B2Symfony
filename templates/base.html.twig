@@ -20,80 +20,70 @@
                         </a>
                     </div>
                     <div class="-mr-2 -my-2 md:hidden">
-                        <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <button onclick="showMobile()" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                             <span class="sr-only">Open menu</span>
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
-                        </button>
+                        </input>
                     </div>
                     <nav class="hidden md:flex space-x-10">
                         <div class="relative">
-                            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                            <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
+                            <button  onclick="showDiv()" type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
                                 <span>Sociétés</span>
                                 <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <div class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                            <div style="display:none;" id="show" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                                 <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                     <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                         <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
                                             <ion-icon size="large" name="restaurant-outline"></ion-icon>
                                             <div class="ml-4">
-                                                <p class="text-base font-medium text-gray-900">
-                                                    Restaurant
+                                                <p class="text-base text-lg font-medium text-gray-900">
+                                                    Restauration
                                                 </p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <!-- Heroicon name: outline/cursor-click -->
-                                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                            </svg>
+                                            <ion-icon size="large" name="server-outline"></ion-icon>
                                             <div class="ml-4">
-                                                <p class="text-base font-medium text-gray-900">
-                                                    Engagement
+                                                <p class="text-base text-lg font-medium text-gray-900">
+                                                    Informatique
                                                 </p>
                                             </div>
                                         </a>
 
                                         <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <!-- Heroicon name: outline/shield-check -->
-                                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                            </svg>
+                                            <ion-icon size="large" name="cash-outline"></ion-icon>
                                             <div class="ml-4">
-                                                <p class="text-base font-medium text-gray-900">
-                                                    Security
+                                                <p class="text-base text-lg font-medium text-gray-900">
+                                                    Banque
                                                 </p>
                                             </div>
                                         </a>
 
                                         <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <!-- Heroicon name: outline/view-grid -->
-                                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                                            </svg>
+                                            <ion-icon size="large" name="car-outline"></ion-icon>
                                             <div class="ml-4">
-                                                <p class="text-base font-medium text-gray-900">
-                                                    Integrations
+                                                <p class="text-base text-lg font-medium text-gray-900">
+                                                    Automobile
                                                 </p>
                                             </div>
                                         </a>
-
-                                        <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <!-- Heroicon name: outline/refresh -->
-                                            <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                            </svg>
-                                            <div class="ml-4">
-                                                <p class="text-base font-medium text-gray-900">
-                                                    Automations
-                                                </p>
-                                            </div>
-                                        </a>
+                                    </div>
+                                    <div class="px-5 py-5 flex items-center justify-center bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                                        <div class="pt-2 relative mx-auto text-gray-600">
+                                            <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                                                   type="search" name="search" placeholder="Search">
+                                            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                                                <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                                                     viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                                                     width="512px" height="512px"> <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" /></svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <div style="display: block" id="mobile" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                 <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                     <div class="pt-5 pb-6 px-5">
                         <div class="flex items-center justify-between">
@@ -117,7 +107,7 @@
                                 <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
                             </div>
                             <div class="-mr-2">
-                                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                <button onclick="showMobile()" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                     <span class="sr-only">Close menu</span>
                                     <!-- Heroicon name: outline/x -->
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -128,53 +118,31 @@
                         </div>
                         <div class="mt-6">
                             <nav class="grid gap-y-8">
-                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/chart-bar -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                    </svg>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
-                Analytics
+                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
+                                    <ion-icon size="large" name="restaurant-outline"></ion-icon>
+                                    <span class="ml-3 text-base text-lg font-medium text-gray-900">
+                Restauration
               </span>
                                 </a>
 
-                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/cursor-click -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                    </svg>
+                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
+                                    <ion-icon size="large" name="server-outline"></ion-icon>
                                     <span class="ml-3 text-base font-medium text-gray-900">
-                Engagement
+                Informatique
               </span>
                                 </a>
 
-                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/shield-check -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
+                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
+                                    <ion-icon size="large" name="cash-outline"></ion-icon>
                                     <span class="ml-3 text-base font-medium text-gray-900">
-                Security
+                Banque
               </span>
                                 </a>
 
-                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/view-grid -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                                    </svg>
+                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
+                                    <ion-icon size="large" name="car-outline"></ion-icon>
                                     <span class="ml-3 text-base font-medium text-gray-900">
-                Integrations
-              </span>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                                    <!-- Heroicon name: outline/refresh -->
-                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                    </svg>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
-                Automations
+                Automobile
               </span>
                                 </a>
                             </nav>
@@ -200,5 +168,24 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script>
+        function showDiv() {
+            var x = document.getElementById("show");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function showMobile() {
+            var x = document.getElementById("mobile");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
     </body>
 </html>
