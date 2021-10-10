@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Society{% endblock %}
+
+{% block body %}
+    <h1>Society</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ society.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ society.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ society.description }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ society.date ? society.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ society.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('society_index') }}">back to list</a>
+
+    <a href="{{ path('society_edit', {'id': society.id}) }}">edit</a>
+
+    {{ include('society/_delete_form.html.twig') }}
+{% endblock %}

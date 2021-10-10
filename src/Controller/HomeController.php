@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Society;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -14,9 +15,8 @@ class HomeController extends AbstractController
      */
     public function home()
     {
-        return $this->render("society/list.html.twig",[
-
-        ]);
+        $society = $this->getDoctrine()->getRepository(Society::class)->findAll();
+        return $this->render("manage/list.html.twig",['societies' =>$society]);
     }
 
 }

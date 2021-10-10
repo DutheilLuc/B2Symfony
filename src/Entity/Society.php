@@ -38,7 +38,7 @@ class Society
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="societies")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="manage")
      */
     private $category;
 
@@ -108,4 +108,10 @@ class Society
         return $this;
     }
 
+    public function __construct()
+    {
+        $this->date = new \DateTime('now');
+    }
 }
+
+
