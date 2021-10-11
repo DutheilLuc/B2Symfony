@@ -9,29 +9,24 @@
             <a href="#" class="w-full block h-full">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover"/>
                 <div class="bg-white w-full p-4">
-                    <p class="text-indigo-500 text-2xl font-medium">
+                    <p class="text-indigo-500 text-2xl font-medium mb-2">
                        {{ society.title }}
                     </p>
-                    <p class="text-gray-800 text-sm font-medium mb-2">
-                        A comprehensive guide about online education.
-                    </p>
                     <p class="text-gray-600 font-light text-md">
-                        It is difficult to believe that we have become so used to having instant access to information at...
-                        <a class="inline-flex text-indigo-500" href="#">Read More</a>
+                        {{ society.description }}
+                        <a class="inline-flex text-indigo-500" href="#">Voir plus</a>
                     </p>
                     <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
                     <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                        #restauration
+                        # {{ society.category }}
                     </div>
                     <div class="flex items-center mt-2">
-                        <img class='w-10 h-10 object-cover rounded-full' alt='User avatar' src='https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200'>
-
                         <div class="pl-3">
                             <div class="font-medium">
-                                Jean Marc
+                                Créer le
                             </div>
                             <div class="text-gray-600 text-sm">
-                                CTO of Supercars
+                                {{ society.date ? society.date|date('Y-m-d H:i:s') : '' }}
                             </div>
                         </div>
                     </div>
