@@ -10,7 +10,7 @@
                 <h1 class="mb-8 text-2xl font-black tracking-tighter text-black md:text-5xl title-font"> {{ society.title }} </h1>
                 <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 "> {{ society.description }} </p>
                 <p class="mt-2 text-sm text-left text-blueGray-600 md:mt-0"> Date de création : <br class="hidden lg:block">
-                <p href="#" class="inline-flex items-center font-semibold text-blue-600 md:mb-2 lg:mb-0 hover:text-black " title="read more"> {{ society.date ? society.date|date('d-m-Y H:i:s') : '' }} </p></p>
+                <p href="#" class="inline-flex items-center font-semibold text-blue-600 md:mb-2 lg:mb-0 hover:text-black " title="read more"> {{ society.date ? society.date|date('d-m-Y à H:i:s') : '' }} </p></p>
                 <div class="flex flex-col justify-center lg:flex-row">
                     <a href="{{ path('society_index') }}" class="flex items-center px-6 py-2 mt-auto mr-5 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-gray-600 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                         Retour</a>

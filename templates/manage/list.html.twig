@@ -14,7 +14,7 @@
                     </p>
                     <p class="text-gray-600 font-light text-md">
                         {{ society.description }}
-                        <a class="inline-flex text-indigo-500" href="#">Voir plus</a>
+                        <a class="inline-flex text-indigo-500" href="{{ path('voir_show', {'id' : society.id}) }}">Voir plus</a>
                     </p>
                     <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
                     <span class="m-1 px-2 py-1 rounded bg-indigo-500">
@@ -26,7 +26,7 @@
                                 Créer le
                             </div>
                             <div class="text-gray-600 text-sm">
-                                {{ society.date ? society.date|date('Y-m-d H:i:s') : '' }}
+                                {{ society.date ? society.date|date('d-m-Y à H:i:s') : '' }}
                             </div>
                         </div>
                     </div>
