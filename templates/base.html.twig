@@ -88,33 +88,13 @@
                         </div>
                         <div class="mt-6">
                             <nav class="grid gap-y-8">
-                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
-                                    <ion-icon size="large" name="restaurant-outline"></ion-icon>
+                                {% for categorieVar in categoriesVar.getCategoriesVar %}
+                                <a href="{{ path('cate_show', {id : categorieVar.id}) }}" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
                                     <span class="ml-3 text-base text-lg font-medium text-gray-900">
-                Restauration
+                {{ categorieVar.name }}
               </span>
                                 </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
-                                    <ion-icon size="large" name="server-outline"></ion-icon>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
-                Informatique
-              </span>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
-                                    <ion-icon size="large" name="cash-outline"></ion-icon>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
-                Banque
-              </span>
-                                </a>
-
-                                <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-md hover:bg-gray-50">
-                                    <ion-icon size="large" name="car-outline"></ion-icon>
-                                    <span class="ml-3 text-base font-medium text-gray-900">
-                Automobile
-              </span>
-                                </a>
+                                {% endfor %}
                                 <div class="px-3 py-3 flex items-center justify-center space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                                     <div class="pt-2 relative mx-auto text-gray-600">
                                         <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
