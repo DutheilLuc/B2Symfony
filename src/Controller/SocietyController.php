@@ -6,6 +6,7 @@ use App\Entity\Society;
 use App\Form\SocietyType;
 use App\Repository\SocietyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,6 +30,29 @@ class SocietyController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form["image"]->getData();
+
+            if ($imageFile) {
+                $originalFileName = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFileName = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; lower()', $originalFileName);
+                $newFileName = $safeFileName . "-" . uniqid() . "." . $imageFile->guessExtension();
+
+
+                try {
+                    $move = $imageFile->move(
+                        $this->getParameter('images'),
+                        $newFileName
+                    );
+
+                    $society->setImage("images/" . $newFileName);
+
+                    if ($move) {
+                        throw new FileException("Error while loading image");
+                    }
+                } catch (FileException $e) {
+                    echo 'Error received : ' . $e->getMessage();
+                }
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($society);
             $entityManager->flush();
@@ -57,6 +81,29 @@ class SocietyController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form["image"]->getData();
+
+            if ($imageFile) {
+                $originalFileName = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFileName = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; lower()', $originalFileName);
+                $newFileName = $safeFileName . "-" . uniqid() . "." . $imageFile->guessExtension();
+
+
+                try {
+                    $move = $imageFile->move(
+                        $this->getParameter('images'),
+                        $newFileName
+                    );
+
+                    $society->setImage("images/" . $newFileName);
+
+                    if ($move) {
+                        throw new FileException("Error while loading image");
+                    }
+                } catch (FileException $e) {
+                    echo 'Error received : ' . $e->getMessage();
+                }
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('society_index', [], Response::HTTP_SEE_OTHER);
