@@ -19,6 +19,15 @@ class SocietyRepository extends ServiceEntityRepository
         parent::__construct($registry, Society::class);
     }
 
+    public function findByNameField(string $query)
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.title LIKE :val')
+            ->setParameter('val', '%'.$query.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Society[] Returns an array of Society objects
     //  */

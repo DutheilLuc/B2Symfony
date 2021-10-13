@@ -15,8 +15,15 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home()
+    public function home(Request $request)
     {
+        $search = $request->query->get('search');
+
+        if ($search) {
+            $societe = $this->getDoctrine()->getRepository(Society::class)->findByNameField($search);
+            return $this->render("manage/list.html.twig",['societies' =>$societe]);
+        }
+
         $society = $this->getDoctrine()->getRepository(Society::class)->findAll();
         return $this->render("manage/list.html.twig",['societies' =>$society]);
     }
