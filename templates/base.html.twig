@@ -36,42 +36,17 @@
                             </button>
                             <div style="display:none;" id="show" class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                                 <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                    {% for categorieVar in categoriesVar.getCategoriesVar %}
                                     <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                        <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <ion-icon size="large" name="restaurant-outline"></ion-icon>
+                                        <a href="{{ path('cate_show', {id : categorieVar.id}) }}" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
                                             <div class="ml-4">
                                                 <p class="text-base text-lg font-medium text-gray-900">
-                                                    Restauration
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <ion-icon size="large" name="server-outline"></ion-icon>
-                                            <div class="ml-4">
-                                                <p class="text-base text-lg font-medium text-gray-900">
-                                                    Informatique
-                                                </p>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <ion-icon size="large" name="cash-outline"></ion-icon>
-                                            <div class="ml-4">
-                                                <p class="text-base text-lg font-medium text-gray-900">
-                                                    Banque
-                                                </p>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="-m-3 p-3 flex items-center justify-center rounded-lg hover:bg-gray-50">
-                                            <ion-icon size="large" name="car-outline"></ion-icon>
-                                            <div class="ml-4">
-                                                <p class="text-base text-lg font-medium text-gray-900">
-                                                    Automobile
+                                                    {{ categorieVar.name }}
                                                 </p>
                                             </div>
                                         </a>
                                     </div>
+                                    {% endfor %}
                                     <div class="px-5 py-5 flex items-center justify-center bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                                         <div class="pt-2 relative mx-auto text-gray-600">
                                             <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"

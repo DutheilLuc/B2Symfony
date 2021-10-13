@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('home') }}" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+        Retour</a>
+    <div class="flex flex-wrap h-screen">
+    {% for society in cat.societies %}
+
+            <div class="mt-10 overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+                <a href="#" class="w-full block h-full">
+                    <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover"/>
+                    <div class="bg-white w-full p-4">
+                        <p class="text-indigo-500 text-2xl font-medium mb-2">
+                            {{ society.title }}
+                        </p>
+                        <p class="text-gray-600 font-light text-md">
+                            {{ society.description }}
+                            <a class="inline-flex text-indigo-500" href="{{ path('voir_show2', {'id' : society.id}) }}">Voir plus</a>
+                        </p>
+                        <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
+                        <span class="m-1 px-2 py-1 rounded bg-indigo-500">
+                            # {{ society.category }}
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <div class="pl-3">
+                                <div class="font-medium">
+                                    Créer le
+                                </div>
+                                <div class="text-gray-600 text-sm">
+                                    {{ society.date ? society.date|date('d-m-Y à H:i:s') : '' }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    {% endfor %}
+    </div>
+{% endblock %}

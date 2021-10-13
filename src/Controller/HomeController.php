@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Society;
+use App\Repository\CategoryRepository;
 use App\Repository\SocietyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,12 +22,30 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/voir/{id}", name="voir_show")
+     * @Route("/show/{id}", name="voir_show")
      */
     public function show($id, SocietyRepository $societyRepository)
     {
         $society = $societyRepository->find($id);
         return $this->render("manage/readlist.html.twig", ['society' => $society,]);
+    }
+
+    /**
+     * @Route("/cateshow/show/{id}", name="voir_show2")
+     */
+    public function show2($id, SocietyRepository $societyRepository)
+    {
+        $society = $societyRepository->find($id);
+        return $this->render("manage/readlistforcat.html.twig", ['society' => $society,]);
+    }
+
+    /**
+     * @Route("/cateshow/{id}", name="cate_show")
+     */
+    public function cateShow($id, CategoryRepository $categoryRepository)
+    {
+        $category = $categoryRepository->find($id);
+        return $this->render("manage/showcategory.html.twig", ['cat' => $category]);
     }
 
 }
